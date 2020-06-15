@@ -55,11 +55,21 @@ $painelPes = new \App\Model\Table\PesquisasTable();
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <div style="border-right: 10px; margin-left: 50px; margin-top: 50px;">
-        <h1><?= $cakeDescription ?></h1>
-        <b>Beta 1.0.0</b>
-		<h5><?= $painelFra->frases()->frase ?></h5>
-    </div>
+	<div style="border-right: 10px; margin-left: 50px; margin-top: 50px; color:#fff;">  
+		<div class="row">
+				<div class="col-4">
+					<h1><?= $cakeDescription ?></h1>
+				</div>     
+				
+				<div class="col-8" style="padding-top:40px">
+					<i>Beta 1.0.2</i>				
+				</div>
+			
+		</div>
+	
+	<h5><?= $painelFra->frases()->frase ?></h5>
+	</div>
+	
     <ul style="margin-left: 50px" class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
         <li><?= $this->Html->link(__('Index'), ['controller' => 'Pages', 'action' => '/']) ?></li>
 
@@ -215,11 +225,11 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                     <center>
 					<?= $cakeDescription ?>
                     <div style="font-size:12px">
-                        Dev by <a  href="https://laintropia.wordpress.com" target="_blank">
-                            Lain Samui
-                        </a>
+					Dev by <?= $this->Html->link(__("Toshokan'noaruji"),
+                             ['controller' => 'Usuarios', 'action' => 'view', '2']) ?>                   
 					<br>
-					Todos os direitos doados ; )
+					Todos os direitos forjados com fogo, sangue e fuligem ; )
+					
 					</div>
                     </center>
                 </div>
@@ -228,37 +238,55 @@ $painelPes = new \App\Model\Table\PesquisasTable();
             <br>
 			<div class="row">
 				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3">
-                    <ul style="list-style-type: none">
-                      <!--   <li>
-                           <center>
-                                <a target='_blank' href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FRELARQVKVZZN&source=url" target="_blank">
-                                    <?=  $this->Html->image("Paypal_QR_Code.png") ?>
-                                </a>
-                            </center>
-                        <br>
-                            <?php
-                               echo "<center><form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
-                                    <input type='hidden' name='cmd' value='_s-xclick'' />
-                                    <input type='hidden' name='hosted_button_id' value='FRELARQVKVZZN' />
-                                    <input type='image' src='https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif' border='0' name='submit' 
-                                            title='PayPal - The safer, easier way to pay online!' 
-                                            alt='Faça doações com o botão do PayPal' />
-                                    <img alt='' border='0' src='https://www.paypal.com/pt_BR/i/scr/pixel.gif' width='1' height='1' />
-                                </form></center>";
-                            ?> 
+                    <ul style="list-style-type: none">                        
+                        <li>
+							<a href="<?= $this->Url->build(['controller' => 'Pages',
+									'action' => 'faq']) ?>">
+							FAQ
+							</a>
+						</li>
+						<li>
+							<a href="<?= $this->Url->build(['controller' => 'Pages', 
+									'action' => 'politica']) ?>">
+							Política
+							</a>
+						</li>
+                        <li>
+							<a href="<?= $this->Url->build(['controller' => 'Pages', 
+									'action' => 'regras']) ?>">
+							Regras
+							</a>
+						</li>
+                        <li>
+							<a href="<?= $this->Url->build(['controller' => 'Pages',
+									'action' => 'sobre']) ?>">
+							Sobre
+							</a>
+						</li>
+                        <li>&nbsp;</li>
+                        <li>
+                            <a href="<?= $this->Url->build(['controller' => 'Pages',
+                                    'action' => 'score']) ?>">
+                            Pontos
+                            </a>
                         </li>
                         <li>
                             <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'dona']) ?>">
-                                Por que doar?
+                                    'action' => 'titulos']) ?>">
+                            Títulos
                             </a>
-                        </li>-->
-                        <br>
+                        </li>
+						<li>&nbsp;</li>
+						<li>
+							<a  href="https://t.me/cypherteca" target="_blank">
+							Telegram
+							</a>
+						</li>
                     </ul>
 				</div>
 				<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
-                    <h5><font color="#DC3545">Novos Membros</font></h5>
-  				    <ul style="list-style-type: none">
+                    <h5><font class="color_prima">Novos Membros</font></h5>
+  				    <ul style="list-style-type: none">                        
                        <?php foreach ($painelUse->userID() as $Usersid): ?>
 						<li>
 							<a href=<?= $this->Url->build(['controller' => 'Usuarios', 
@@ -271,7 +299,7 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                 </div>
 				<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
                     <div title='Rank de atividades'>
-					<h5><font color="#DC3545">Rank Δ (Top 10)</font></h5>
+					<h5><font class="color_prima">Rank Δ (Top 10)</font></h5>
 					</div>
 					<ul style="list-style-type: none">
 						<?php foreach ($painelUse->userATV() as $UsersRatv):
@@ -289,13 +317,13 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                                     'controller' => 'Usuarios',
                                     'action' => 'rank', 'pontos'									
 									] 
-                            ) ?>" class="btn btnW btn-danger">Todos</a>
+                            ) ?>" class="btn">Todos</a>
                         </li>
 					</ul>
 				</div>
 				<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
 					<div title='Rank de gratidão'>
-					<h5><font color="#DC3545">Rank ♥ (Top 10)</font></h5>
+					<h5><font class="color_prima">Rank ♥ (Top 10)</font></h5>
 					</div>
 					<ul style="list-style-type: none">						
                         <?php foreach ($painelUse->userRH() as $UsersHeart):
@@ -313,73 +341,13 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                                     'controller' => 'Usuarios',
                                     'action' => 'rank', 'heart'									
 									] 
-                            ) ?>" class="btn btnW btn-danger">Todos</a>
+                            ) ?>" class="btn">Todos</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-12 hidden-md col-lg-3 col-xl-3">
-                    <ul style="list-style-type: none">
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'faq']) ?>">
-                                FAQ
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'politica']) ?>">
-                                Política
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'regras']) ?>">
-                                Regras
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'sobre']) ?>">
-                                Sobre
-                            </a>
-                        </li>
-                        <br>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'score']) ?>">
-                                Pontos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                'action' => 'titulos']) ?>">
-                                Títulos
-                            </a>
-                        </li>
-                        <br>
-
-                        <li>
-                            <?= $this->Html->image("telegram.png", array('height' => 32, 'width' => 32)) ?> Telegram
-                        </li>
-                        <li>
-                            <a  href="https://t.me/cypherteca" target="_blank">
-                                Cypherteca [Canal]
-                            </a>
-                        </li>
-                        <li>
-                            <a  href="https://t.me/neocyberia" target="_blank">
-                                Cyberia [Canal]
-                            </a>
-                        </li>
-                        <li>
-                            <a  href="https://t.me/neocy" target="_blank">
-                                Cyberia [Grupo]
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>
                 <div class="col-sm-12 hidden-md col-lg-9 col-xl-9">
-                    <h5><font color="#DC3545">Novos Livros</font></h5>
+                    <h5><font class="color_prima">Novos Livros</font></h5>
                     <ul style="list-style-type: none">
                         <?php foreach ($painelLiv->livroNovo() as $LivroN): ?>
 
@@ -393,7 +361,7 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                 </div>
                 <div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>
                 <div class="col-sm-12 hidden-md col-lg-9 col-xl-9">
-                    <h5><font color="#DC3545">Pesquisas recentes</font></h5>
+                    <h5><font class="color_prima">Pesquisas recentes</font></h5>
                     <ul style="list-style-type: none">
                         <?php foreach ($painelPes->ultimasPesquisas() as $pesquisa): ?>
 
@@ -411,7 +379,7 @@ $painelPes = new \App\Model\Table\PesquisasTable();
             <div class="row" style="margin-bottom: 33px">
 				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>			
 				<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-				<h5><font color="#DC3545">Estatísticas</font></h5>
+				<h5><font cclass="color_prima">Estatísticas</font></h5>
 					<ul style="list-style-type: none">
                        <!-- <font color="#585858"> -->
                         <div class="table-responsive-sm">
@@ -427,7 +395,7 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                                 </thead>
                                 <tbody>
                                     <td><?= $painelLiv->livroCount() ?></td>
-                                    <td title="K = 1.000"><?= $painelLiv->pageCount() ?></td>
+                                    <td><?= $painelLiv->pageCount() ?></td>
                                     <td><?= $painelCat->catCount() ?></td>
                                     <td><?= $painelSer->serCount() ?></td>
                                     <td><?= $painelUse->useCount() ?></td>

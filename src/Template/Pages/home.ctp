@@ -10,24 +10,24 @@ use Cake\ORM\TableRegistry;
         <?php if ($this->request->getSession()->read('Auth.User.id')) : ?>
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -49,7 +49,7 @@ use Cake\ORM\TableRegistry;
     <form style="text-align: right" action='<?php echo $this->Url->build(['controller' => 'Livros',
 	'action' => 'index'])?>' class='form-header'>
         <input class='au-input au-input--xl' type='text' id='busca' name='busca' placeholder='Pesquisar'>
-        <button type='submit' class='btn btnW btn-primary'>Buscar</button>
+        <button type='submit' class='btn'>Buscar</button>
     </form>
 	
     <div class="row">
@@ -103,19 +103,14 @@ use Cake\ORM\TableRegistry;
 								</span>
 							</td>
 							<td class="d-none d-sm-table-cell">
-								<?= $this->Html->link(__(h($mural->usuario->nome)),
+								<?= $this->Html->link(($mural->usuario->nome),
 									['controller' => 'Usuarios', 'action' => 'view', $mural->iduser]) ?>
 							</td>
 							<td class="d-none d-sm-table-cell d-md-table-cell">
-                                <?php
-                                if ($mural->dataenvio === null) {
-                                    $dataenvio = '';
-                                } else {
-                                    $dataenvio = $mural->dataenvio->format('d/m/Y');
-                                }
-
-                                echo $dataenvio;
-                                ?>
+								<?php
+									$data = date("d/m/Y", strtotime($mural->dataenvio));
+									echo $data;
+								?>
 							</td>
 							<td class="actions">
 								<?php if ($this->request->getSession()->read('Auth.User.id') == $mural->iduser) { ?>
