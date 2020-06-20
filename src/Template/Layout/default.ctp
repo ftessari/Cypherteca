@@ -55,21 +55,21 @@ $painelPes = new \App\Model\Table\PesquisasTable();
     <?= $this->fetch('script') ?>
 </head>
 <body>
-	<div style="border-right: 10px; margin-left: 50px; margin-top: 50px; color:#fff;">  
+<div class="titulo" style="padding-top: 50px; padding-bottom: 50px;">
+	<div style="margin-left: 50px; ">  
 		<div class="row">
 				<div class="col-4">
 					<h1><?= $cakeDescription ?></h1>
 				</div>     
 				
 				<div class="col-8" style="padding-top:40px">
-					<i>Beta 1.0.2</i>				
-				</div>
-			
-		</div>
-	
+					<i id="cor01">Beta 1.0.2</i>				
+				</div>			
+		</div>	
 	<h5><?= $painelFra->frases()->frase ?></h5>
 	</div>
-	
+
+	<!-- Menu -->
     <ul style="margin-left: 50px" class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
         <li><?= $this->Html->link(__('Index'), ['controller' => 'Pages', 'action' => '/']) ?></li>
 
@@ -200,6 +200,7 @@ $painelPes = new \App\Model\Table\PesquisasTable();
         </li>
     <?php } ?>
     </ul>
+</div>
     <!-- Menu Superior - fim -->
 	<!-- Exibir nome da tabela do DB
 	<nav class="top-bar expanded" data-topbar role="navigation">
@@ -222,15 +223,46 @@ $painelPes = new \App\Model\Table\PesquisasTable();
         <div class="container">
             <div class="row">                 
 				<div class="col-12">
+				<p style="text-align: center">
+                <a  href="<?= $this->Url->build(['controller' => 'Pages',
+                    'action' => 'faq']) ?>">
+                    FAQ
+                </a>|
+                <a href="<?= $this->Url->build(['controller' => 'Pages',
+                    'action' => 'politica']) ?>">
+                    Política
+                </a>|
+                <a href="<?= $this->Url->build(['controller' => 'Pages',
+                    'action' => 'regras']) ?>">
+                    Regras
+                </a>|
+                <a  href="<?= $this->Url->build(['controller' => 'Pages',
+                    'action' => 'sobre']) ?>">
+                    Sobre
+                </a>|
+                <a  href="<?= $this->Url->build(['controller' => 'Pages',
+                    'action' => 'score']) ?>">
+                    Pontos
+                </a>|
+                <a href="<?= $this->Url->build(['controller' => 'Pages',
+                    'action' => 'titulos']) ?>">
+                    Títulos
+                </a>
+            </p>
                     <center>
 					<?= $cakeDescription ?>
                     <div style="font-size:12px">
-					Dev by <?= $this->Html->link(__("Toshokan'noaruji"),
-                             ['controller' => 'Usuarios', 'action' => 'view', '2']) ?>                   
-					<br>
-					Todos os direitos forjados com fogo, sangue e fuligem ; )
-					
+						Dev by Lain
+							<a  href="https://github.com/lainsamui/Cypherteca	" target="_blank">
+							 (GitHub)
+							</a>						 
+							<br>
+						lainsamui[at]riseup[dot]net
+						<br>					
 					</div>
+					
+					<br>
+						Todos os direitos doados ; )
                     </center>
                 </div>
 				
@@ -239,49 +271,27 @@ $painelPes = new \App\Model\Table\PesquisasTable();
 			<div class="row">
 				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3">
                     <ul style="list-style-type: none">                        
-                        <li>
-							<a href="<?= $this->Url->build(['controller' => 'Pages',
-									'action' => 'faq']) ?>">
-							FAQ
-							</a>
-						</li>
-						<li>
-							<a href="<?= $this->Url->build(['controller' => 'Pages', 
-									'action' => 'politica']) ?>">
-							Política
-							</a>
-						</li>
-                        <li>
-							<a href="<?= $this->Url->build(['controller' => 'Pages', 
-									'action' => 'regras']) ?>">
-							Regras
-							</a>
-						</li>
-                        <li>
-							<a href="<?= $this->Url->build(['controller' => 'Pages',
-									'action' => 'sobre']) ?>">
-							Sobre
-							</a>
-						</li>
-                        <li>&nbsp;</li>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                    'action' => 'score']) ?>">
-                            Pontos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= $this->Url->build(['controller' => 'Pages',
-                                    'action' => 'titulos']) ?>">
-                            Títulos
-                            </a>
-                        </li>
-						<li>&nbsp;</li>
+                        <li><h5><font class="color_prima">Telegram</font></h5></li>
 						<li>
 							<a  href="https://t.me/cypherteca" target="_blank">
-							Telegram
+								channel: Cypherteca 
+							</a>
+						</li><li>	<a  href="https://t.me/neocyberia" target="_blank">
+								channel: Cyberia  
+							</a>
+						</li><li>	<a  href="https://t.me/neocy" target="_blank">
+								grupo: Cyberia  
 							</a>
 						</li>
+						<li>&nbsp;</li>
+						<li><h5><font class="color_prima">Parcerias</font></h5></li>
+						<li>							
+							<a  href="http://fhynv2xw7wbtfj3u.onion" target="_blank">
+								Portal Cyberia 
+							</a>							
+							
+						</li>
+						
                     </ul>
 				</div>
 				<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">

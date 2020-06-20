@@ -8,42 +8,42 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>		
 		<li>
-			<a  href="<?= $this->Url->build(['action' => 'index']) ?>" class="btn btn-danger">
+			<a  href="<?= $this->Url->build(['action' => 'index']) ?>" class="btn">
 			Todos
 			</a>
 		</li>
 		<hr>	
 		<li>
-			<a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+			<a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
 			Livros
 			</a>
 		</li>
 		<li>
-			<a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+			<a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
 			Categorias
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
 			Séries
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
 			Editoras
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
 			Autores
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroidioma', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroidioma', 'action' => 'index']) ?>" class="btn">
 			Idiomas
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livrotipos', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livrotipos', 'action' => 'index']) ?>" class="btn">
 			Tipos
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroformatos', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroformatos', 'action' => 'index']) ?>" class="btn">
 			Formatos
 			</a>
 		</li>
@@ -80,7 +80,7 @@
             <?= $this->Form->button(__('Salvar'),
                 [
                     'style' => 'margin-right: 520px',
-                    'class' => 'btn btn-success',
+                    'class' => 'btn',
                     'title' => 'Salvar'
                 ]
             ); ?>

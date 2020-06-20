@@ -13,7 +13,7 @@
                     'controller' => 'Mural',
                     'action' => 'add'
                 ]
-            ) ?>" class="btn btn-danger">
+            ) ?>" class="btn">
                 Nova mensagem
             </a>
         </li>
@@ -24,35 +24,35 @@
                     'action' => 'index',
                     'iduser' => $this->request->getSession()->read('Auth.User.id')
                 ]
-            ) ?>" class="btn btn-danger">
+            ) ?>" class="btn">
                 Minhas mensagens
             </a>
         </li>
 		<li>
-			<a  href="<?= $this->Url->build(['action' => 'index']) ?>" class="btn btn-danger">
+			<a  href="<?= $this->Url->build(['action' => 'index']) ?>" class="btn">
 			Index
 			</a>
 		</li>
 		<hr>	
 		<li>
-			<a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-warning">
+			<a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
 			Livros
 			</a>
 		</li>
 		<li>
-			<a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-warning">
+			<a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
 			Categorias
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-warning">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
 			Séries
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-warning">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
 			Editoras
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-warning">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
 			Autores
 			</a>
 		</li>
@@ -115,11 +115,11 @@
         </div>
     </fieldset>
 	<div class="text-right"><i class='material-icons md-24 align-middle'>
-            <?= $this->Form->button(__('Enviar'),
+            <?= $this->Form->button(__('Salvar'),
                 [
                     'style' => 'margin-right: 150px',
-                    'class' => 'btn btnW btn-success',
-                    'title' => 'Enviar'
+                    'class' => 'btn',
+                    'title' => 'Salvar'
                 ]
             ); ?>
             <?= $this->Form->end() ?></i>

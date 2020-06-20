@@ -8,30 +8,30 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'view', $usuario->id]) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'view', $usuario->id]) ?>" class="btn">
                 Ver
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -126,10 +126,11 @@
 						echo $this->Form->control('viewmail', 
 							[
 								'empty' => true,
-								'type' => 'checkbox',									
+								'type' => 'checkbox',						
 								'label' => [
 									'text' => 'Mostrar e-mail',
-									'title' => 'Seu e-mail ficará visível para todos'									
+									'title' => 'Seu e-mail ficará visível para todos',
+									
 								]
 							]);
 					
@@ -150,7 +151,7 @@
 					<?= $this->Form->button(__('Salvar'),
 					[
 						'style' => 'margin-right: 140px',
-						'class' => 'btn btnW btn-success'
+						'class' => 'btn'
 					]
 					); ?>
 					<?= $this->Form->end() ?></i>			  
@@ -199,7 +200,7 @@
 					<?= $this->Form->button(__('Salvar'),
 						[
 							'style' => 'margin-right: 140px',
-							'class' => 'btn btnW btn-success'
+							'class' => 'btn'
 						]
 					); ?>
 		            <?= $this->Form->end() ?></i>
@@ -256,7 +257,7 @@
 					<?= $this->Form->button(__('Salvar'),
 						[
 							'style' => 'margin-right: 140px',
-							'class' => 'btn btnW btn-success'
+							'class' => 'btn'
 						]
 					); ?>
 					<?= $this->Form->end() ?></i>

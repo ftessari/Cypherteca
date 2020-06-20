@@ -5,7 +5,7 @@
  */
 
     if ($mural->ativo == 0) { // Mensagem desativada
-        if ($this->request->Session()->read('Auth.User.tipo') < 1) {
+        if ($this->request->getSession()->read('Auth.User.tipo') < 2) {
             return $this->redirect(['action' => 'index']);
         }
     }
@@ -67,17 +67,6 @@
             <?= __('Mural') ?>
         </a>
     </h3>
-    <div class="right">
-        <a href="
-            <?= $this->Url->build(
-                [
-                    'controller' => 'Mural',
-                    'action' => 'add'
-                ]
-            ) ?>" class="btn btnW btn-danger">
-            Nova Mensagem
-        </a>
-    </div>
 
     <h3 style="margin-top: 25px"><?= h($mural->titulo) ?></h3>
     <table class="vertical-table">
@@ -118,13 +107,8 @@
             <th scope="row"><?= __('') ?></th>
             <td>
                 <?php
-                if ($mural->dataenvio === null) {
-                    $data = '';
-                } else {
-                    $data = $mural->dataenvio->format('d/m/Y');
-                }
-
-                echo $data;
+                    $data = date("d/m/Y", strtotime($mural->dataenvio));
+                    echo $data;
                 ?>
             </td>
         </tr>
@@ -151,7 +135,7 @@
                 <?php endif; ?>
 
                 <!-- Moderação -->
-                <?php if ($this->request->Session()->read('Auth.User.tipo') > 0) : ?>
+                <?php if ($this->request->getSession()->read('Auth.User.tipo') > 1) : ?>
                     <?= "<i class='material-icons md-24 align-middle'>".
 					$this->Html->link(__('warning'),
                         [

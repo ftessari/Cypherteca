@@ -76,7 +76,7 @@ class LivrolinksController extends AppController
 
 			$livrolink->link = str_replace('http://', 	'', $livrolink->link);
 			$livrolink->link = str_replace('https://', 	'', $livrolink->link);
-			$livrolink->link = str_replace('www', 		'', $livrolink->link);		
+			$livrolink->link = str_replace('www.', 		'', $livrolink->link);		
           
 			if ($this->Livrolinks->save($livrolink)) {
                 $dbpontos = new PontosController();
@@ -114,7 +114,7 @@ class LivrolinksController extends AppController
 			
             $livrolink->link = str_replace('http://', '', $livrolink->link);
 			$livrolink->link = str_replace('https://', '', $livrolink->link);
-			$livrolink->link = str_replace('www', '', $livrolink->link);
+			$livrolink->link = str_replace('www.', '', $livrolink->link);
 			
 			if ($this->Livrolinks->save($livrolink)) {
                 $this->Flash->success(__('Link salvo.'));
@@ -142,9 +142,9 @@ class LivrolinksController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $livrolink = $this->Livrolinks->get($id);
         if ($this->Livrolinks->delete($livrolink)) {
-            $this->Flash->success(__('The livrolink has been deleted.'));
+            $this->Flash->success(__('Link deletado com sucesso!'));
         } else {
-            $this->Flash->error(__('The livrolink could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Link não pode ser removido.'));
         }
 
         return $this->redirect(['controller' => 'Livros', 'action' => 'view', $livrolink->idlivro]);

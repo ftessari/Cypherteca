@@ -25,7 +25,7 @@
                 'value' => date('Y-m-d H:s')
             ]);
             echo $this->Form->control('iduser',[
-                'value' => $this->request->Session()->read('Auth.User.id'),
+                'value' => $this->request->getSession()->read('Auth.User.id'),
                 'type' => 'hide'
             ]);
             echo $this->Form->control('status',[

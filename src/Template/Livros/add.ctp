@@ -8,52 +8,52 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn">
                 Incluir
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn ">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn ">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn ">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn ">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn ">
                 Autores
             </a>
         </li>
-		 <li class="heading"><?= __('Categorias') ?></li>
-        <span>
+		 <li class="heading"><img href=<?= $this->Html->image("system/icons8-book-stack-26.png") ?>
+                        <?= __('Categorias') ?></li>
             <?php foreach ($qcategoria as $listar):?>
             <a href=<?= $this->Url->build(['controller' => 'Livros', 
 											'action' => 'index?busca='.$listar->categoria]) ?>>
                 <?php echo $listar->categoria;?>
             </a><br>
         <?php endforeach;?>
-        </span>
+
     </ul>
 </nav>
-<div class="livros form large-9 medium-8 columns content">
+<div class="livros form large-9 medium-8 columns content">b
     <?= $this->Form->create($livro) ?>
     <fieldset>
         <legend><?= __('Novo Livro') ?></legend>
 		<div class="container">
             <div class="row">
                 <div class="col-12 notice">
-					<ul style="padding-left: 5px; margin-bottom: -1px; color: #985f0d">
+					<ul style="padding-left: 5px; margin-bottom: -1px;">
 						<b>Atenção!</b>
 						<li>Para adicionar capa, entrar em modo de <b>edição</b> após conclusão desta etapa.</li>
 						<li><b>Uploads</b> de <i>links</i> devem ser especificados na página da obra.</li>
@@ -203,12 +203,13 @@
                 </div>
             </div>
         </div>
-
+<br>
     <!--Primeiro Link [Upload] -->
         <legend><?= __('Adicionar Link') ?></legend>
+		<br>
         <div class="row">
             <div class="col-12 notice">
-                <ul style="padding-left: 5px; margin-bottom: -1px; color: #985f0d">
+                <ul style="padding-left: 5px; margin-bottom: -1px;">
                     <li>Se for incluir o upload agora. Por favor, especifique o formato correto.</li>
                     <li>De preferência compacte em formato <b>.zip</b></li>
                     <li>Você poderá incluir quantos formatos da obra quiser, mais tarde.</li>
@@ -250,7 +251,7 @@
                   /* echo $this->Form->control('idformato', [
                         'options' 	=> $parentFormatos,
                         'class' 	=> 'form-control form-control-lg',
-                        'style' => '\margin-top: 5px; margin-botton: 15px; width: 100%',
+                        'style' => 'margin-top: 5px; margin-botton: 15px; width: 100%',
                         'label' 	=> [
                             'text' 		=> 'Formatos',
                             'class' 	=> 'control-label input-label'
@@ -271,12 +272,12 @@
         </div>
     </fieldset>
     <div class="text-right"><i class='material-icons md-24 align-middle'>
-        <?= $this->Form->button(__('Salvar'),
+            <?= $this->Form->button(__('Salvar'),
                 [
                     'style' => 'margin-right: 150px',
-                    'class' => 'btn btnW btn-success'
+                    'class' => 'btn'
                 ]
-         ) ?>
-        <?= $this->Form->end() ?></i>
+            ) ?>
+            <?= $this->Form->end() ?></i>
     </div>
 </div>

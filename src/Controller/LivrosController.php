@@ -573,12 +573,19 @@ class LivrosController extends AppController
         $livro = $this->Livros->get($id);
 
         // Check se capa existe e deleta
-        $target_dir = WWW_ROOT . 'img' . DS . 'capas' . DS;
-        $target_file = $target_dir . basename($livro->capa);
-        if (file_exists($target_file)) {
-            echo unlink($target_file);
-        }
-
+		if ($livro->capa){
+			$target_dir = WWW_ROOT . 'img' . DS . 'capas' . DS;
+			$target_file = $target_dir . basename($livro->capa);
+			
+			if (file_exists($target_file)) {
+				echo unlink($target_file);
+			}
+		}
+		
+		// Remover links de downloads
+		$dbLinks = new LivrolinksController();
+        $livrolink = $dbLinks->Livrolinks->find('all')->where(['idlivro' => $id]);
+      
         if ($this->Livros->delete($livro)) {
             $this->Flash->success(__('Obra removida.'));
         } else {
@@ -599,12 +606,12 @@ class LivrosController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $livro = $this->Livros->patchEntity($livro, $this->request->getData());			
-
+			
 			$livro->editavel = $value;
 			if ($this->Livros->save($livro)) {
 				$this->Flash->success(__('Registro salvo.'));
-                //  $this->livro->Logs->log_rec($livro->id, date('Y-m-d H:s'),'Autor', 'Manutenção', 10, '');
-                //$mdlog-> log_rec( //para tabelas sem vinculo
+              //  $this->livro->Logs->log_rec($livro->id, date('Y-m-d H:s'),'Autor', 'Manutenção', 10, '');
+                //$mdlog->log_rec( //para tabelas sem vinculo
 				return $this->redirect(['action' => 'index']);
 			} 
 		}
@@ -624,7 +631,7 @@ class LivrosController extends AppController
 		}
     }
 	
-	// Remover Capa
+	// Remover Avatar
 	public function delImg($id = null)
     {
 		$livro = $this->Livros->get($id, [
@@ -646,7 +653,7 @@ class LivrosController extends AppController
 			if ($this->Livros->save($livro)) {
 				$this->Flash->success(__('Capa deletada.'));
                // $this->Livros->Logs->log_rec($usuario->id, date('Y-m-d H:s'),'Usuários', 'Remoção de avatar', 0, '');
-               // $mdlog->log_rec( // para tabelas sem vinculo
+                //$mdlog->log_rec( //para tabelas sem vinculo 
 				return $this->redirect(['action' => 'view', $id]);
 			} 
 		}
@@ -657,7 +664,8 @@ class LivrosController extends AppController
     {
         $query = $this->Livros->find('all')
             ->where(['Livros.titulo' => $titulo])
-            ->order(['Livros.id' => 'DESC']);
+            ->order(['Livros.id' => 'DESC'])
+            ;
 
         $livro = $this->paginate($query)->first();
 

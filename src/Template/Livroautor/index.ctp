@@ -8,30 +8,30 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn">
                 Incluir
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -68,13 +68,13 @@
 						if ($livroautor->editavel == 1) { // Se estiver ativo
 							$legenda = "Desativar edição"; 									
 							$ativar = 0; // Desativar
-							$cor_btn = 'btn btnW btn-secondary';
+							$cor_btn = 'btn';
 							$icone = 'toggle_on';
 						} 
 						else {
 							$legenda = "Ativar edição"; 
 							$ativar = 1; // Ativar
-							$cor_btn = 'btn btnW btn-primary';
+							$cor_btn = 'btn';
 							$icone = 'toggle_off';
 						}	
 					?>
@@ -99,7 +99,7 @@
                         [
                             'action' => 'edit', $livroautor->id
                         ]
-                    ) ?>" class="btn btnW btn-primary">
+                    ) ?>" class="btn">
                         edit
                     </a>
 					</i>

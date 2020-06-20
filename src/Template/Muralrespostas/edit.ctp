@@ -40,13 +40,13 @@
         ]);
         if ($modera == 0) {
             echo $this->Form->control('iduser', [
-                'value' => $this->request->Session()->read('Auth.User.id'),
+                'value' => $this->request->getSession()->read('Auth.User.id'),
                 'type' => 'hide'
             ]);
         }
         elseif ($modera == 1) {
             echo $this->Form->control('moderador', [
-                'value' => $this->request->Session()->read('Auth.User.id'),
+                'value' => $this->request->getSession()->read('Auth.User.id'),
                 'type' => 'hide'
             ]);
             echo $this->Form->control('dataalt', [

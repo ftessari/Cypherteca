@@ -10,24 +10,24 @@ use Cake\ORM\TableRegistry;
         <?php if ($this->request->getSession()->read('Auth.User.id')) : ?>
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -72,32 +72,7 @@ use Cake\ORM\TableRegistry;
 				<p>Obrigado por ler isto.</p>
 
             <p style='text-align: right'>~ A Curadoria</p>
-            <p style="text-align: center">
-                <a  href="<?= $this->Url->build(['controller' => 'Pages',
-                    'action' => 'faq']) ?>">
-                    FAQ
-                </a>|
-                <a href="<?= $this->Url->build(['controller' => 'Pages',
-                    'action' => 'politica']) ?>">
-                    Política
-                </a>|
-                <a href="<?= $this->Url->build(['controller' => 'Pages',
-                    'action' => 'regras']) ?>">
-                    Regras
-                </a>|
-                <a  href="<?= $this->Url->build(['controller' => 'Pages',
-                    'action' => 'sobre']) ?>">
-                    Sobre
-                </a>|
-                <a  href="<?= $this->Url->build(['controller' => 'Pages',
-                    'action' => 'score']) ?>">
-                    Pontos
-                </a>|
-                <a href="<?= $this->Url->build(['controller' => 'Pages',
-                    'action' => 'titulos']) ?>">
-                    Títulos
-                </a>
-            </p>
+            
 		</div>
     </div>
 </div>

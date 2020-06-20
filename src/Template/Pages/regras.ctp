@@ -10,24 +10,24 @@ use Cake\ORM\TableRegistry;
         <?php if ($this->request->getSession()->read('Auth.User.id')) : ?>
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -53,7 +53,7 @@ use Cake\ORM\TableRegistry;
 				<b>(art.1) das Condutas</b> 
 					<li>§.1- Você não deve falar sobre a Cypherteca;</li>
 					<li>§.2- Você não deve falar sobre a Cypherteca;</li>
-					<li>§.3- Não há punição caso queira quebra as duas primeiras regras;</li>
+					<li>§.3- Não há punição caso tenha quebrado as duas primeiras regras;</li>
 					<li>§.4- Mantenha a biblioteca limpa. Nada de escrever '<b>4551M</b>' ou <i>CoMo Se eStIvEsSe nO sEu bLoG fOfo</i>;</li>
 					<li>§.5- Evite palavrões, você será penalizado;</li>
 					<li>§.6- Trate os outros membros como deseja ser tratado. 
@@ -142,32 +142,7 @@ use Cake\ORM\TableRegistry;
 				</li>
 
                 <p style='text-align: right'>~ A Curadoria</p>
-                <p style="text-align: center">
-                    <a  href="<?= $this->Url->build(['controller' => 'Pages',
-                        'action' => 'faq']) ?>">
-                        FAQ
-                    </a>|
-                    <a href="<?= $this->Url->build(['controller' => 'Pages',
-                        'action' => 'politica']) ?>">
-                        Política
-                    </a>|
-                    <a href="<?= $this->Url->build(['controller' => 'Pages',
-                        'action' => 'regras']) ?>">
-                        Regras
-                    </a>|
-                    <a  href="<?= $this->Url->build(['controller' => 'Pages',
-                        'action' => 'sobre']) ?>">
-                        Sobre
-                    </a>|
-                    <a  href="<?= $this->Url->build(['controller' => 'Pages',
-                        'action' => 'score']) ?>">
-                        Pontos
-                    </a>|
-                    <a href="<?= $this->Url->build(['controller' => 'Pages',
-                        'action' => 'titulos']) ?>">
-                        Títulos
-                    </a>
-                </p>
+               
 			<ul>
 			<li><?= $this->Html->link(__('Registrar-se'), ['controller' => 'Usuarios', 'action' => 'add'])?></li>
             </ul>

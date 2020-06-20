@@ -8,51 +8,52 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-primary">
+            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn">
                 Abrir Solicitação
             </a>			
         </li>
-		<!--<li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-primary">
-                Solicitações
-            </a>			
-        </li>
-		<li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-primary">
-                Concluidos
-            </a>			
-        </li>-->
+        
         <?php if ($this->request->getSession()->read('Auth.User.tipo') > 1) : ?>
             <li>
-                <a  href="<?= $this->Url->build(['controller' => 'Dashtipos', 'action' => 'index']) ?>" class="btn btn-danger">
-                    Dashboard (Tipos)
+                <a  href="<?= $this->Url->build(['controller' => 'Dashtipos', 'action' => 'index']) ?>" class="btn">
+                    Tipos de Solicitações
                 </a>
             </li>
         <?php endif; ?>
 		 <hr>
+		 
+		<li>
+		
+		<a  href="<?= $this->Url->build(['action' => 'backup']) ?>" class="btn">
+                Backup
+            </a>
+
+		</li>
+		<hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
         <hr>
+		
     </ul>
 </nav>
 <div class="dashboard index large-9 medium-8 columns content">
@@ -134,7 +135,7 @@
 					<a href="<?= $this->Url->build(
 						    ['action' => 'edit', $dashboard->id],
                             ['title' => $titleEdit]
-						) ?>" class="btn btn-primary">
+						) ?>" class="btn">
 							<?php echo $labelEdit; ?>
 					</a>
 				<!-- Ativação -->
@@ -145,10 +146,10 @@
 
 				<!-- Conclusão -->
 				<?php 
-				if ($this->request->Session()->read('Auth.User.tipo') > 1) :  // Controle - somente Admin				
+				if ($this->request->getSession()->read('Auth.User.tipo') > 1) :  // Controle - somente Admin				
 					if ($dashboard->dataconclusao == null) {
 						$legenda = "Concluir"; 
-						$cor_btn = 'btn btn-secondary';
+						$cor_btn = 'btn';
 				?>
 				<td class="actions">
 					<i class='material-icons md-24 align-middle'>

@@ -13,7 +13,7 @@
                     'controller' => 'Mural',
                     'action' => 'add'
                 ]
-            ) ?>" class="btn btn-danger">
+            ) ?>" class="btn">
                 Nova mensagem
             </a>
         </li>
@@ -24,31 +24,31 @@
                     'action' => 'index',
                     'iduser' => $this->request->getSession()->read('Auth.User.id')
                 ]
-            ) ?>" class="btn btn-danger">
+            ) ?>" class="btn">
                 Minhas mensagens
             </a>
         </li>
 	
 		<hr>	
 		<li>
-			<a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-warning">
+			<a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
 			Livros
 			</a>
 		</li>
 		<li>
-			<a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-warning">
+			<a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
 			Categorias
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-warning">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
 			Séries
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-warning">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
 			Editoras
 			</a>
 		</li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-warning">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
 			Autores
 			</a>
 		</li>
@@ -102,14 +102,8 @@
                 </td>
                 <td>
                     <?php
-
-                    if ($mural->dataenvio === null) {
-                        $dataenvio = '';
-                    } else {
-                        $dataenvio = $mural->dataenvio->format('d/m/Y');
-                    }
-
-                    echo $dataenvio;
+                        $data = date("d/m/Y", strtotime($mural->dataenvio));
+                        echo $data;
                     ?>
                 </td>
                 <td class="actions">
@@ -120,7 +114,7 @@
 				    		//	'controller' => 'Mural',
 				    			'action' => 'edit', $mural->id
 				    		]
-				    		) ?>" class="btn btnW btn-primary">
+				    		) ?>" class="btn">
 				    			edit
 				    	</a>
 						</i>
@@ -132,13 +126,13 @@
                         if ($mural->ativo == 1) { // Se estiver ativo
                             $legenda = "Desativar";
                             $ativar = 0; // Desativar
-                            $cor_btn = 'btn btnW btn-secondary';
+                            $cor_btn = 'btn';
                             $icone = 'toggle_on';
                         }
                         else {
                             $legenda = "Ativar";
                             $ativar = 1; // Ativar
-                            $cor_btn = 'btn btnW btn-primary';
+                            $cor_btn = 'btn';
                             $icone = 'toggle_off';
                         }
                         ?>

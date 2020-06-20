@@ -166,9 +166,9 @@ class MuralController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $mural = $this->Mural->get($id);
         if ($this->Mural->delete($mural)) {
-            $this->Flash->success(__('The mural has been deleted.'));
+            $this->Flash->success(__('Mensagem do mural deletada.'));
         } else {
-            $this->Flash->error(__('The mural could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Não foi possível deletar a mensagem do mural.'));
         }
 
         return $this->redirect(['action' => 'index']);

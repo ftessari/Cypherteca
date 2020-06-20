@@ -8,30 +8,30 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -49,7 +49,7 @@
 						'action' => 'edit', $livroautor->id
 					],
 					[
-						'class' => 'btn btn-primary',
+						'class' => 'btn',
 						'title' => 'Editar Autor',
 						'style' => 'font-size: 12px'
 					])
@@ -62,7 +62,7 @@
 								$livroautor->id
 				],
 				[
-					'class' => 'btn btn-warning',
+					'class' => 'btn',
 					'title' => 'Denúnciar Autor',
 					'style' => 'font-size: 12px'
 				]) 
@@ -110,7 +110,7 @@
                 } else {
                   echo  "<a href=" .$this->Url->build(
                             ['action' => 'edit', $livroautor->id]
-                            ). " class='btn btn-primary'>
+                            ). " class='btn'>
                                 Informe a Biografia
                         </a>";
                 }

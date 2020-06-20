@@ -14,7 +14,7 @@
                     'action' => 'index?iduser='.$usuario->id
                 ],
                 [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn'
                 ]
             ); ?>
 		</li>
@@ -27,7 +27,7 @@
 					'idresp' => -1 // Não é uma resposta
                 ],
                 [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn'
                 ]
             ); ?>		
 		</li>
@@ -47,7 +47,7 @@
                                     ],
                                     [
                                         'style'     => 'width: 60px; font-size:33px; color: #dc143c !important;',
-                                        'class' 	=> 'btn dvm-button',
+                                        'class' 	=> 'btn',
                                         'title' 	=> 'Muito obrigado!!'
                                     ]
                                 )
@@ -139,13 +139,16 @@
 				<?php endif; ?>					
             </table>
         </li>        
-        <div class="notice">
+		
+        <div class="notice2">
             <center>
 				<div style="font-family: karmatic_arcade; padding-top: 20px; padding-bottom: 20px">
 					<?= __('Ficha Tecnica') ?>
 				</div>
 			</center>
-			<li class="heading" style="font-family: karmatic_arcade"><?= __('Status') ?></li>
+			<div style="margin-left: 10px; margin-right: 10px">
+			
+			<h3><?= __('Status') ?></h3>
 			<li>
 				<?php
 					if (!$status->icone) {
@@ -165,19 +168,20 @@
 				<br>
 			</li>
 		<?php if ($usuario->titulos) :?>
-		<li class="heading" style="font-family: karmatic_arcade"><?= __('Titulos') ?></li>
+		<h3><?= __('Titulos') ?></h3
 		<li>
             <?php
             foreach ($usuario->titulos as $listar):
                 echo $this->Html->image("titulos/" . $listar->icone, [
                     "align" => "center",
+					"style" => "margin-top: 3px",
                     "title" => $listar->descricao
                 ]) ."&nbsp;&nbsp;<b>". $listar->designacao."</b><br>";
             endforeach;
             ?>
 		</li>
 		<?php endif; ?>
-        <li class="heading" style="font-family: karmatic_arcade"><?= __('Rank') ?></li>
+        <h3><?= __('Rank') ?></h3>
         <li>
             <?php
             if ($usuario->pontos <= 0) {
@@ -185,17 +189,18 @@
             } else {
                 $score = $usuario->pontos;
             }
+			echo "<div id='skema01'>
+                    <center><b>";
 			if ($score > 0) {
-            echo "<div class='text-muted bg-white stldiv'>
-                    <b>".$urank->rank."&nbsp;&nbsp;".$score."</b>
-                  </div>";
+				echo $urank->rank."&nbsp;&nbsp;".$score;
 			} else {
-			echo "<div class='text-muted bg-white stldiv'>
-                    <b>" .$score."</b>
-                  </div>";	
+				echo $score;	
 			}
+			echo "</center></b>
+			</div>";
             ?>
         </li>
+		</div>
         <br>
         </div>
     </ul>
@@ -226,14 +231,14 @@
                             'action' => 'edit', $usuario->id
                         ],
                         [
-                            'class' => 'btn btnW btn-primary',
+                            'class' => 'btn',
                             'title' => 'Editar Associado'
                         ]
                     ). "</i>";
                 endif;
             echo "&nbsp;";
-			if (($this->request->getSession()->read('Auth.User.id')) AND
-                    ($this->request->getSession()->read('Auth.User.id') <> $usuario->id)) :
+			if (($this->request->getSession()->read('Auth.User.id'))
+				AND ($this->request->getSession()->read('Auth.User.id') <> $usuario->id)) : 
 				echo $this->Html->link(__('!'),
 					[
 						'controller' => 'Dashboard',
@@ -242,9 +247,8 @@
 									$usuario->id
 					],
 					[
-						'class' => 'btn btnW btn-warning',
-						'title' => 'Denúnciar usuário',
-						'style' => 'font-size: 12px; color:#FFF !important'
+						'class' => 'btn',
+						'title' => 'Denúnciar usuário'
 					]
 				);
 			endif; ?>
@@ -258,20 +262,19 @@
                         "align" => "right"]);
                 } else {
 					// Botão para remover avatar pelo admin
-					if ($this->request->getSession()->read('Auth.User.tipo') > 1) : 		
-						echo "<i class='material-icons md-24 align-middle'>";
-						echo $this->Form->postLink(__('X'),
-							['action' 	=> 'delImg', $usuario->id],
-							[																							
-								'type' 		=> 'button', 
-								'class' 	=> 'btn btnW btn-danger',
-								'confirm' 	=> __('Deseja realmente remover a imagem do registro de {0}?', $usuario->nome),
-								'title' 	=> 'Remover Avatar',
-								'style' => 'font-size: 12px'
+					if ($this->request->getSession()->read('Auth.User.tipo') > 1) : 	
+	
+				echo "<i class='material-icons md-24 align-middle'>".
+					 $this->Form->postLink(__('delete'),
+                            [   'action' => 'delImg', $usuario->id],
+							[
+								'type' 		=> 'button',
+								'class' 	=> 'btn',
+                                'confirm' 	=> __('Deseja realmente remover a imagem do registro de {0}?', $usuario->id),
+                                'title' 	=> 'Remover'
 							]
-							);
-						
-						echo "</i><br>";		
+							).
+                      "</i><br>";		
 					endif;
 					
 					// Avatar
@@ -284,7 +287,7 @@
     </table>
 	<div class="row">
 		<?php if ($usuario->bio) : ?>		
-			<h4><?= __('Bio') ?></h4>
+			<h4><?= __('Sobre') ?></h4>
 			<div class="col-12">
 				<?= $this->Text->autoParagraph($usuario->bio)?>
 				<br>

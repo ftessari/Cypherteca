@@ -6,14 +6,14 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <div style='text-align: center' class='notice'>
+        <div style='text-align: center' class='notice2'>
 				Bemvindo(a)!<br><br>
             Ainda não se registrou?<br>
-			<span>	<a href="<?= $this->Url->build(['controller' => 'Pages', 
+				
+			<a href="<?= $this->Url->build(['controller' => 'Pages', 
 											'action' => 'regras']) ?>">
 					Por favor, leia as <b>Regras</b> clicando aqui
 				</a>
-            </span>
         </div>
         <div style="text-align: center">
             <?= $this->Html->image("system/teca_avatar.png", [
@@ -26,7 +26,7 @@
 <div class="usuarios form large-9 medium-8 columns content">
     <?= $this->Form->create() ?>
     <fieldset class="scheduler-border">
-        <legend class="scheduler-border"><?= __('Acessar') ?></legend>
+        <legend class="scheduler-border"><?= __('Autenticação') ?></legend>
 		<div class="row">
 		<div class="col-4">			
 			<div class="input-group">
@@ -62,11 +62,12 @@
 						<?= $this->Form->button(__('Entrar'), 
 							[
 								'style' => 'margin-right: 550px',		
-								'class' => 'btn btnW btn-success'
+								'class' => 'btn'
 							]
 						);
 						?>
 					</div>
+					<div><?= $this->Html->link(__('Registrar-se'), ['controller' => 'Usuarios', 'action' => 'add'])?></div>
 				</span>
 			</div>
 		</div>

@@ -69,7 +69,7 @@ class LivropontosController extends AppController
 		}
 		
 		$query = $this->Livropontos->find('all')->where([  
-			'iduser' => $this->request->getSession()->read('Auth.User.id'),
+			'iduser' => $this->request->Session()->read('Auth.User.id'),
 			'idlivro' => $idlivro		
         ]);
 		
@@ -86,7 +86,7 @@ class LivropontosController extends AppController
 		$article = $articles->newEntity();
 
 		$article->idlivro = $idlivro;					
-		$article->iduser = $this->request->getSession()->read('Auth.User.id');
+		$article->iduser = $this->request->Session()->read('Auth.User.id');
 		$article->pontos = $ponto;
 
         $dbpontos = new PontosController();

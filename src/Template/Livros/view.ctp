@@ -8,30 +8,30 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn">
                 Incluir
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
@@ -62,7 +62,7 @@
 						'action' => 'edit', $livro->id
 					],
 					[
-						'class' => 'btn btnW btn-primary',
+						'class' => 'btn',
 						'title' => 'Editar Obra'
 					])
 			?>
@@ -76,7 +76,7 @@
 								$livro->id
 				],
 				[
-					'class' => 'btn btnW btn-warning',
+					'class' => 'btn',
 					'title' => 'Denúnciar Obra'
 				]) 
 			?>
@@ -97,7 +97,7 @@
 							['action' 	=> 'delImg', $livro->id],
 							[																							
 								'type' 		=> 'button', 
-								'class' 	=> 'btn btnW btn-danger',
+								'class' 	=> 'btn',
 								'confirm' 	=> __('Deseja realmente remover a imagem do registro de {0}?', $livro->titulo),
 								'title' 	=> 'Remover Capa',
 								'style'     => 'font-size: 12px'
@@ -120,7 +120,7 @@
 			<?php if ($livro->link_comp) {
 				$this->Html->link($livro->link_comp, 'http://'.$livro->link_comp, 
 							array(
-								'class' => 'btn btn-warning', 
+								'class' => 'btn', 
 								'target' => '_blank'
 								)
 							);
@@ -243,7 +243,7 @@
 				else {
                   echo  "<a href=" .$this->Url->build(
                             ['action' => 'edit', $livro->id]
-                            ). " class='btn btnW btn-primary'>
+                            ). " class='btn'>
                                 Informe a Sinopse
                         </a>";
                 }
@@ -302,7 +302,7 @@
 					],
 					[
 						'type' 		=> 'button',
-						'class' 	=> 'btn btnW dvm-button btn-info',
+						'class' 	=> 'btndvm-button btn-info',
 						'confirm' 	=> __('Gostou mesmo desta obra? :)'),								
 						'title' 	=> 'Eu li e gostei!'
 					]
@@ -318,7 +318,7 @@
 					],
 					[
 						'type' 		=> 'button',
-						'class' 	=> 'btn btnW dvm-button btn-info',
+						'class' 	=> 'btndvm-button btn-info',
 						'confirm' 	=> __('Tem certeza de que não gostou desta obra? :('),
 						'title'		=> 'Eu li e não gostei!'
 					]
@@ -356,7 +356,7 @@
                 [
                     'style' => 'font-size: 12px'
                 ]
-            ) ?>" class="btn btnW btn-danger">
+            ) ?>" class="btn">
                 Enviar arquivo
             </a>
         </div><br>		
@@ -382,7 +382,7 @@
 							$label." (.". h($download->livroformato->ext. ")"), "http://".$download->link,							
 							[
 								'target' => '_blank', 
-								'class' => 'btn btn-warning btn-sm btn-block'
+								'class' => 'btnbtn-sm btn-block'
 							]);
                         
 
@@ -393,7 +393,7 @@
 						//			'action' => 'nDownload', $download->id, $livro-id, $download->link
 						//		],
 						//		[
-						//			'class' => 'btn btn-warning btn-sm btn-block',
+						//			'class' => 'btnbtn-sm btn-block',
 						//			'target' => '_blank'
 						//		]
 						//	);
@@ -419,7 +419,7 @@
 					<?php
                      // Informar Link quebrado
                     if (!empty($this->request->getSession()->read('Auth.User.id'))) {
-                        echo $this->Html->link(__('!'),
+                        echo $this->Html->link(__(' ! '),
                             [
                                 'controller' => 'Dashboard',
                                 'action' => 'informeLink', $this->request->getSession()->read('Auth.User.id'),
@@ -427,7 +427,7 @@
                                 $download->id
                             ],
                             [
-                                'class' => 'btn btnW btn-danger',
+                                'class' => 'btn',
                                 'title' => 'Denunciar link. (Link quebrado ou contendo virus.)',
                                 'style' => 'font-size: 12px'
                             ]
@@ -437,13 +437,13 @@
 							if ($download->ativo == 1) { // Se estiver ativo
 								$legenda = "Desativar"; 									
 								$ativar = 0;
-								$cor_btn = 'btn btnW btn-secondary';
+								$cor_btn= 'btn';
 								$icone = 'toggle_on';
 							} 
 							else {
 								$legenda = "Ativar"; 
 								$ativar = 1;
-								$cor_btn = 'btn btnW btn-primary';
+								$cor_btn= 'btn';
 								$icone = 'toggle_off';
 							}	
 					?>
@@ -472,7 +472,7 @@
 								'idLivro' => $livro->id,
 								'titulo' => $livro->titulo
 							]							
-						) ?>" class="btn btnW btn-primary" style ='font-size: 12px'>
+						) ?>" class="btn" style ='font-size: 12px'>
 							Editar
 						</a>
 						<?php
@@ -500,7 +500,7 @@
                 [
                     'style' => 'font-size: 12px'
                 ]
-            ) ?>" class="btn btnW btn-danger">
+            ) ?>" class="btn">
                 Comentar
             </a>
         </div>
@@ -523,7 +523,7 @@
                                     'titulo' => $livro->titulo
                                 ],
                                 [
-                                   'class'=> 'btn btnW btn-primary'
+                                   'class'=> 'btn'
                                 ]
                             ) ?>
                         </div>

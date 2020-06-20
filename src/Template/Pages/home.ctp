@@ -120,7 +120,7 @@ use Cake\ORM\TableRegistry;
 										//	'controller' => 'Mural',
 											'action' => 'edit', $mural->id
 										]
-										) ?>" class="btn btnW btn-primary">
+										) ?>" class="btn">
 											edit
 									</a>
 									</i>
@@ -132,13 +132,13 @@ use Cake\ORM\TableRegistry;
 									if ($mural->ativo == 1) { // Se estiver ativo
 										$legenda = "Desativar";
 										$ativar = 0; // Desativar
-										$cor_btn = 'btn btnW btn-secondary';
+										$cor_btn = 'btn';
 										$icone = 'toggle_on';
 									}
 									else {
 										$legenda = "Ativar";
 										$ativar = 1; // Ativar
-										$cor_btn = 'btn btnW btn-primary';
+										$cor_btn = 'btn';
 										$icone = 'toggle_off';
 									}
 									?>
@@ -165,7 +165,7 @@ use Cake\ORM\TableRegistry;
                 <div style="text-align: right" class="col-12">
                 <a href="<?= $this->Url->build(
                             ['controller' => 'Mural', 'action' => 'add']
-                        )?>" class='btn btnW btn-primary'>
+                        )?>" class='btn'>
                     Nova Mensagem
                 </a></div>
 			</div>

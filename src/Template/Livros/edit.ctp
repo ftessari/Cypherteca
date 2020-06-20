@@ -9,42 +9,41 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn ">
                 Incluir
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn ">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn ">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn ">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn ">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn ">
                 Autores
             </a>
         </li>
-		 <li class="heading"><?= __('Categorias') ?></li>
-        <span>
+		<li class="heading"><img href=<?= $this->Html->image("system/icons8-book-stack-26.png") ?>
+                        <?= __('Categorias') ?></li>
             <?php foreach ($qcategoria as $listar):?>
             <a href=<?= $this->Url->build(['controller' => 'Livros', 
 											'action' => 'index?busca='.$listar->categoria]) ?>>
                 <?php echo $listar->categoria;?>
             </a><br>
         <?php endforeach;?>
-        </span>
     </ul>
 </nav>
 <div class="livros form large-9 medium-8 columns content">
@@ -54,7 +53,7 @@
         <div class="container">
                 <div class="row">
                     <div class="col-12 notice">
-                        <ul style="padding-left: 5px; color: #985f0d">
+                        <ul style="padding-left: 5px; ">
                             <b>Atenção!</b>
                             <li><b>Uploads</b> de <i>links</i> devem ser especificados na
                                 <a href=<?= $this->Url->build(['action' => 'view', $livro->id]) ?>>
@@ -105,7 +104,11 @@
 		            				]);				
                         echo $this->Form->control('sinopse', [
 										'type' => 'textarea',
-										'style' => 'width: 230px'
+										'style' => 'width: 230px',
+										'label' 	=> [
+                                            'text' 		=> 'Sinopse',
+                                            'class' 	=> 'control-label input-label'
+											]
 									]);						
 						echo $this->Form->control('ano', [
                                         'empty' => true,
@@ -145,8 +148,7 @@
 		            						'class' 	=> 'control-label input-label'
 		            					]
 		            				]);
-                    echo  "</div>
-                            <div class='col-sm-12 col-md-6 col-lg-6 col-xl-6'>";
+                    echo  "</div><div class='col-sm-12 col-md-6 col-lg-6 col-xl-6'>";
                         echo $this->Form->control('ISBN', [
 		            					'class' => 'form-control form-control-lg',
 		            					'type' 	=> 'text',
@@ -218,7 +220,11 @@
                                         'class' => 'form-control form-control-lg',
                                         'type' 	=> 'text',
                                         'style' => 'width: 230px',
-                                        'placeholder' => '#tag1 #tag2 #tag3'
+                                        'placeholder' => '#tag1 #tag2 #tag3',
+										'label' 	=> [
+                                            'text' 		=> 'Tags',
+                                            'class' 	=> 'control-label input-label'
+											]
                                     ]);
 				?>
 			</div>	
@@ -226,16 +232,15 @@
 	</div>
 	</fieldset>
 	
-    <div class="text-right">
-        <i class='material-icons md-24 align-middle'>
-		<?= $this->Form->button(__('Salvar'),
-			[
-				'style' => 'margin-right: 150px',
-				'class' => 'btn btnW btn-success',
-				'title' => 'Salvar'
-			]
-		) ?>
-		<?= $this->Form->end() ?></i>
-	</div>
+    <div class="text-right"><i class='material-icons md-24 align-middle'>
+				<?= $this->Form->button(__('Salvar'),
+					[
+						'style' => 'margin-right: 150px',			
+						'class' => 'btn ',
+						'title' => 'Salvar'
+					]
+				) ?>
+				<?= $this->Form->end() ?></i>
+			</div>
 			
 </div>

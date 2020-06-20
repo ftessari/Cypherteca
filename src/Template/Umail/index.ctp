@@ -23,7 +23,7 @@ $user = new \App\Model\Table\UmailTable();
                     'rec_env' => 0
                 ],
                 [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn'
                 ]
             ); ?>
         </li>
@@ -35,7 +35,7 @@ $user = new \App\Model\Table\UmailTable();
                     'rec_env' => 1
                 ],
                 [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn'
                 ]
             ); ?>
         </li>
@@ -47,7 +47,7 @@ $user = new \App\Model\Table\UmailTable();
                     'rec_env' => 2
                 ],
                 [
-                    'class' => 'btn btn-danger'
+                    'class' => 'btn'
                 ]
             ); ?>
         </li>
@@ -122,7 +122,8 @@ $user = new \App\Model\Table\UmailTable();
                 } else {
                     $data_lido = date("d/m/Y H:i", strtotime($umail->data_lido));
                 }
-                echo $data_lido;
+                echo 
+					$data_lido;
                    
                 echo "</td>";
                 echo "<td class='actions'>";
@@ -133,13 +134,13 @@ $user = new \App\Model\Table\UmailTable();
 							if ($umail->ativo == 1) { // Se estiver ativo
 								$legenda = "Remover"; 									
 								$ativar = 0; // Desativar
-								$cor_btn = 'btn btnW btn-secondary';
+								$cor_btn = 'btn';
 								$icone = 'toggle_on';
 							} 
 							else {
 								$legenda = "Ativar"; 
 								$ativar = 1; // Ativar
-								$cor_btn = 'btn btnW btn-primary';
+								$cor_btn = 'btn';
 								$icone = 'toggle_off';
 							}
 							
@@ -162,7 +163,7 @@ $user = new \App\Model\Table\UmailTable();
                             [
                                 'action' => 'edit', $umail->id
                             ]
-                        ) ." class='btn btnW btn-primary'>
+                        ) ." class='btn'>
                             Editar
                         </a>";
 

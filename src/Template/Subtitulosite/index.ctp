@@ -8,42 +8,42 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['action' => 'add']) ?>" class="btn">
                 Incluir
             </a>
         </li>
         <hr>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroidioma', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroidioma', 'action' => 'index']) ?>" class="btn">
                 Idiomas
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livrotipos', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livrotipos', 'action' => 'index']) ?>" class="btn">
                 Tipos
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroformatos', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroformatos', 'action' => 'index']) ?>" class="btn">
                 Formatos
             </a>
         </li>
@@ -65,20 +65,29 @@
                 <td><?= $this->Number->format($subtitulosite->id) ?></td>
                 <td><?= h($subtitulosite->frase) ?></td>
                 <td class="actions">
-					<a href="<?= $this->Url->build(
-						[
-							'action' => 'edit', $subtitulosite->id
-						]
-						) ?>" class="btn btnW btn-primary">
-							Editar
-					</a>					
-					<?= $this->Form->postLink(__('Deletar'), 
-					[
-						'action' 	=> 'delete', $subtitulosite->id						
-					], 
-					[
-						'confirm'	=> __('Deseja deletar a frase # {0}?', $subtitulosite->id),
-						'class'		=> "btn btnW btn-danger"])
+				
+				 <i class='material-icons md-24 align-middle'>
+					<a title="Editar" href="<?= $this->Url->build(
+                        [
+                            'action' => 'edit', $subtitulosite->id
+                        ]
+                    ) ?>" class='btn'>
+                        edit
+                    </a>
+					</i>
+							
+
+					<?php echo "<i class='material-icons md-24 align-middle'>".
+					 $this->Form->postLink(__('delete'),
+                            [   'action' => 'delete', $subtitulosite->id],
+							[
+								'type' 		=> 'button',
+								'class' 	=> 'btn',
+                                'confirm' 	=> __('Deseja realmente remover a frase {0}?', $subtitulosite->id),
+                                'title' 	=> 'Remover'
+							]
+							).
+                      "</i>";
 					?>
 					
 				</td>

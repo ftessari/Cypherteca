@@ -5,8 +5,8 @@
  */
 
 // Permissão para edição
-if (($this->request->Session()->read('Auth.User.id') <> $mural->iduser) ||
-    ($this->request->Session()->read('Auth.User.tipo') < 2)) {
+if (($this->request->getSession()->read('Auth.User.id') <> $mural->iduser) ||
+    ($this->request->getSession()->read('Auth.User.tipo') < 2)) {
     return $this->redirect(['action' => 'index']);
 }
 ?>
@@ -94,7 +94,7 @@ if (($this->request->Session()->read('Auth.User.id') <> $mural->iduser) ||
 							]);
 						echo "</div>";
                         echo $this->Form->control('iduser',[
-                            'value' => $this->request->Session()->read('Auth.User.id'),
+                            'value' => $this->request->getSession()->read('Auth.User.id'),
                             'type' => 'hide'
                         ]);
 

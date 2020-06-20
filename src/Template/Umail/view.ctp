@@ -82,11 +82,11 @@ $user = new \App\Model\Table\UmailTable();
                     Ou entre me contato com alguém da Curadoria.</p><br>";
                 }
                 else {
-                    $umail->texto;
+                  echo h($umail->texto);
                 }
                 ?>
 			</div>
-            <?php if ($umail->de != 1 ) : ?> // 1 = bot
+            <?php if ($umail->de != 1 ) : ?> <!-- 1 = bot -->
             <div style="text-align: right" class="col-12">
                 <a href="<?= $this->Url->build(
                     [

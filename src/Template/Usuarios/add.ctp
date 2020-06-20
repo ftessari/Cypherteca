@@ -9,29 +9,29 @@
         <?php if ($this->request->getSession()->read('Auth.User.id')) { ?>
         <li class="heading"><?= __('Menu') ?></li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livros', 'action' => 'index']) ?>" class="btn">
                 Livros
             </a>
         </li>
         <li>
-            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn btn-danger">
+            <a  href="<?= $this->Url->build(['controller' => 'Livrocat', 'action' => 'index']) ?>" class="btn">
                 Categorias
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroserie', 'action' => 'index']) ?>" class="btn">
                 Séries
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroeditoras', 'action' => 'index']) ?>" class="btn">
                 Editoras
             </a>
         </li>
-        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn btn-danger">
+        <li><a  href="<?= $this->Url->build(['controller' => 'Livroautor', 'action' => 'index']) ?>" class="btn">
                 Autores
             </a>
         </li>
         <?php } else { ?>
-			<div style='text-align: center' class='notice'>
+			<div style='text-align: center' class='notice2'>
 				<a href="<?= $this->Url->build(['controller' => 'Pages', 
 											'action' => 'regras']) ?>">
 					Por favor, leia as <b>Regras</b> clicando aqui
@@ -161,7 +161,7 @@
             <?= $this->Form->button(__('Salvar'),
                 [
                     'style' => 'margin-right: 140px',
-                    'class' => 'btn btnW btn-success',
+                    'class' => 'btn',
                     'title' => 'Salvar'
                 ]
             ); ?>

@@ -191,18 +191,6 @@ class LivrosTable extends Table
         $livro = $livroDB->find('all');
         $livrot = $livro->select(['sum' => $livro->func()->sum('n_pag')])->first();
 
-        // Substitui 1000 por K
-        $n = strlen($livrot->sum);
-        if ($n > 9) {
-            $livrot->sum = substr($livrot->sum,0, $n-9) .'KKK';
-        }
-        elseif (($n > 6) AND ($n < 10)) {
-            $livrot->sum = substr($livrot->sum,0, $n-6) .'KK';
-        }
-        elseif (($n > 3) AND ($n < 7)) {
-            $livrot->sum = substr($livrot->sum,0, $n-3) .'K';
-        }
-
         return $livrot->sum;
     }
 

@@ -14,7 +14,7 @@
                     'action' => 'index'
                 ],
                 [
-                    'class' => 'btn btn-warning'
+                    'class' => 'btn'
                 ]
             ); ?>
 		</li>
@@ -26,7 +26,7 @@
                     'rec_env' => 0
                 ],
                 [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn'
                 ]
             ); ?>
         </li>
@@ -38,7 +38,7 @@
                     'rec_env' => 1
                 ],
                 [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn'
                 ]
             ); ?>
         </li>
@@ -50,7 +50,7 @@
                     'rec_env' => 2
                 ],
                 [
-                    'class' => 'btn btn-danger'
+                    'class' => 'btn'
                 ]
             ); ?>
         </li>
@@ -96,7 +96,7 @@
             <?= $this->Form->button(__('Salvar'),
                 [
                     'style' => 'margin-right: 550px',
-                    'class' => 'btn btnW btn-success',
+                    'class' => 'btn',
                     'title' => 'Salvar'
                 ]
             ); ?>
