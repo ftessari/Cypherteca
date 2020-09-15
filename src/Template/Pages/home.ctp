@@ -117,7 +117,7 @@ use Cake\ORM\TableRegistry;
 									<i class='material-icons md-24 align-middle'>
 									<a title="Editar" href="<?= $this->Url->build(
 										[
-										//	'controller' => 'Mural',
+											'controller' => 'Mural',
 											'action' => 'edit', $mural->id
 										]
 										) ?>" class="btn">
@@ -144,7 +144,9 @@ use Cake\ORM\TableRegistry;
 									?>
 									<i class='material-icons md-24 align-middle'>
 										<?= $this->Form->postLink(__($icone),
-											['action' => 'ativa', $mural->id, $ativar],
+											[
+												'controller' => 'Mural',
+												'action' => 'ativa', $mural->id, $ativar],
 											[
 												'type' 		=> 'button',
 												'class' 	=> $cor_btn,
@@ -189,11 +191,12 @@ use Cake\ORM\TableRegistry;
 							echo $this->Html->image("capas/".$livro->capa);
 						}
 						?>
-					</a><br>   
+					<br>   
 					<center>
 						<?= h($livro->titulo) ?><br>
 						<?= h($livro->subtitulo) ?>
 					</center>
+					</a>
 				</div>
 				<?php endforeach; ?>
 			</div>
@@ -220,13 +223,13 @@ use Cake\ORM\TableRegistry;
                                     echo $this->Html->image("capas/".$livroIndie->capa);
                                 }
 							}
-                            ?>
-                        </a>
+                            ?>                        
                         <br>
                         <center>
                             <?= h($livroIndie->titulo) ?><br>
                             <?= h($livroIndie->subtitulo) ?>
                         </center>
+						</a>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -254,13 +257,13 @@ use Cake\ORM\TableRegistry;
                                     echo $this->Html->image("capas/".$livrosMLs->capa);
                                 }
 								endif;
-                                ?>
-                            </a>
+                                ?>                           
                             <br>
                             <center>
                                 <?= h($livrosMLs->titulo) ?><br>
                                 <?= h($livrosMLs->subtitulo) ?>
                             </center>
+							</a>
                         </div>
                     <?php endforeach; ?>
                 </div>

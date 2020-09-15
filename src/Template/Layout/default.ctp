@@ -58,15 +58,14 @@ $painelPes = new \App\Model\Table\PesquisasTable();
 <div class="titulo" style="padding-top: 50px; padding-bottom: 50px;">
 	<div style="margin-left: 50px; ">  
 		<div class="row">
-				<div class="col-4">
-					<h1><?= $cakeDescription ?></h1>
-				</div>     
-				
-				<div class="col-8" style="padding-top:40px">
-					<i id="cor01">Beta 1.0.2</i>				
-				</div>			
+			<div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+				<h1><?= $cakeDescription ?></h1>
+			</div>
+			<div class="hidden-sm hidden-md col-lg-4 col-xl-4">
+				<i id="cor01">Beta 1.0.3</i>				
+			</div>			
 		</div>	
-	<h5><?= $painelFra->frases()->frase ?></h5>
+		<h5><?= $painelFra->frases()->frase ?></h5>
 	</div>
 
 	<!-- Menu -->
@@ -212,6 +211,12 @@ $painelPes = new \App\Model\Table\PesquisasTable();
     </nav>
 	-->
     <br>
+	<div style="text-align:center">
+		Patrociado por:<br>
+		<a href="http://carrot7rw5qtbzdchalmd2gshhq656maqqgy5xedrwe42okkkwekooqd.onion/">
+			<?= $this->Html->image("carrot_banner.png") ?>
+		</a>
+	</div>
     <br><hr>
     <!-- Conteudo -->
     <?= $this->Flash->render() ?>
@@ -262,7 +267,8 @@ $painelPes = new \App\Model\Table\PesquisasTable();
 					</div>
 					
 					<br>
-						Todos os direitos doados ; )
+						Todos os direitos doados ; )<br>
+						cypherteca[at]riseup[dot]net
                     </center>
                 </div>
 				
@@ -276,20 +282,23 @@ $painelPes = new \App\Model\Table\PesquisasTable();
 							<a  href="https://t.me/cypherteca" target="_blank">
 								channel: Cypherteca 
 							</a>
-						</li><li>	<a  href="https://t.me/neocyberia" target="_blank">
+						</li>
+						<li>	
+							<a  href="https://t.me/neocyberia" target="_blank">
 								channel: Cyberia  
 							</a>
-						</li><li>	<a  href="https://t.me/neocy" target="_blank">
+						</li>
+						<li>	
+							<a  href="https://t.me/neocy" target="_blank">
 								grupo: Cyberia  
 							</a>
 						</li>
 						<li>&nbsp;</li>
 						<li><h5><font class="color_prima">Parcerias</font></h5></li>
 						<li>							
-							<a  href="http://fhynv2xw7wbtfj3u.onion" target="_blank">
+							<a  href="http://cyberiay62aljdbcc6u3zdaxl5uig32qjnzhmbxtrtfy5fik3blsouad.onion" target="_blank">
 								Portal Cyberia 
-							</a>							
-							
+							</a>
 						</li>
 						
                     </ul>
@@ -355,7 +364,14 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>
+			</div>
+            <div class="row">
+				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3" style="text-align:center">
+					<a href="http://carrot7rw5qtbzdchalmd2gshhq656maqqgy5xedrwe42okkkwekooqd.onion/">
+						<?= $this->Html->image("carrot_banner.png") ?>
+					</a><br>
+					Servidor dedicado a promover a liberdade de expressão.				
+				</div>				
                 <div class="col-sm-12 hidden-md col-lg-9 col-xl-9">
                     <h5><font class="color_prima">Novos Livros</font></h5>
                     <ul style="list-style-type: none">
@@ -369,7 +385,9 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                         <?php  endforeach; ?>
                     </ul>
                 </div>
-                <div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>
+                </div>
+				<div class="row">
+				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>
                 <div class="col-sm-12 hidden-md col-lg-9 col-xl-9">
                     <h5><font class="color_prima">Pesquisas recentes</font></h5>
                     <ul style="list-style-type: none">
@@ -387,19 +405,18 @@ $painelPes = new \App\Model\Table\PesquisasTable();
 			
             <!-- Apoio/ parceria -->
             <div class="row" style="margin-bottom: 33px">
-				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>			
+				<div class="hidden-sm hidden-md col-lg-3 col-xl-3"></div>			
 				<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
 				<h5><font cclass="color_prima">Estatísticas</font></h5>
 					<ul style="list-style-type: none">
-                       <!-- <font color="#585858"> -->
                         <div class="table-responsive-sm">
                             <table class="table table-sm table-light table-borderless">
                                 <thead>
                                 <tr>
-                                    <th scope="col" width="90">Obras</th>
+                                    <th scope="col" width="90"><?= $this->Html->link(__('Obras'), ['controller' => 'Livros', 'action' => 'index']) ?></th>
                                     <th scope="col" width="90">Páginas(≈)</th>
-                                    <th scope="col" width="90">Categorias</th>
-                                    <th scope="col" width="90">Séries</th>
+                                    <th scope="col" width="90"><?= $this->Html->link(__('Categorias'), ['controller' => 'Livrocat', 'action' => 'index']) ?></th>
+                                    <th scope="col" width="90"><?= $this->Html->link(__('Séries'), ['controller' => 'Livroserie', 'action' => 'index']) ?></th>
                                     <th scope="col" width="90">Associados</th>
                                 </tr>
                                 </thead>
@@ -412,7 +429,6 @@ $painelPes = new \App\Model\Table\PesquisasTable();
                                 </tbody>
                             </table>
                         </div>
-                      <!--  </font> -->
                     </ul>
 				</div>				
 				<div class="col-sm-12 hidden-md col-lg-3 col-xl-3"></div>
