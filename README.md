@@ -1,3 +1,8 @@
+Community library. Ideologically cypherpunk. ò_ó
+It is a link library, it does not store files (in its current version).
+Developed to run on the Tor network. It worked for over a year on the **Carrot Hosting** server.
+![photo_2020-09-03_08-47-30](https://github.com/ftessari/Cypherteca/assets/20548035/79fb4dd6-8987-4c67-ab73-d134028ede49)
+
 # CakePHP Application Skeleton
 
 [![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
